@@ -1,0 +1,12 @@
+.CityList {
+  display: flex;
+  background-color: #f3f3f3;
+  justify-content: center;
+}
+
+.CityList__card {
+  height: 100px;
+  width: 100px;
+  margin: 5px 15px;
+  background-color: burlywood;
+}
