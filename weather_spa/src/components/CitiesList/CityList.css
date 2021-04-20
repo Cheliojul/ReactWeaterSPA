@@ -1,7 +1,5 @@
 .CityList {
-  display: flex;
-  background-color: #f3f3f3;
-  justify-content: center;
+  padding: 20px 30px;
 }
 
 /* .CityList__card {
