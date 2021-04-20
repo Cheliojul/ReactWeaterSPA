@@ -23,6 +23,7 @@ export const App = () => {
     const { value } = event.target;
     setInput(value);
   }
+
   return (
     <div className="App">
       <form onSubmit={AddCity} className="form">
@@ -34,6 +35,7 @@ export const App = () => {
         >
         </input>
         <button type="submit"> Add City</button>
+        <button onClick={() => setCities([])}> Clear Cities</button>
       </form>
       <CitiesList cities={cities} />
     </div>

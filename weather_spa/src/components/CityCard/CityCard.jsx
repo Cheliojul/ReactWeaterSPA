@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { getWeather } from '../../api/api'
-import './city-card.css'
-export const CityCard = (city) => {
-  const weather = getWeather(city);
-  console.log('CITYCARD', weather);
-  console.log(weather.base)
-  return (
-    <div key={weather.id} className="city-card">
-      <div>{weather.base}</div>
-    </div>
-  );
+import './CityCard.css'
+
+export const CityCard = ({ city }) => {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    getWeather(city).then(result => setData(result))
+  },[]);
+  console.log(data)
+  console.log(Boolean(Object.keys(data).length))
+  return Object.keys(data).length ? (
+      
+      <div key={data.id} className="CityCard">
+        <div className="CityCard__title">
+          {`${data.name} , ${data.sys.country}`}
+        </div>
+        <div className="CityCard__desciption">
+          {data.weather[0].description}
+        </div>
+        <button className="CityCard__button">
+          D
+        </button>
+        <button className="CityCard__button">
+          R
+        </button>
+      </div>
+    )
+    : 'Loading...';
 }
+

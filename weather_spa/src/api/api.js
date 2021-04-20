@@ -1,6 +1,6 @@
 
 
-export  async function getWeather({ city }) {
+export  async function getWeather(city) {
   function capitalize(string) {
     return string.substr(0,1).toUpperCase() + string.slice(1).toLowerCase();
   }
@@ -10,4 +10,6 @@ export  async function getWeather({ city }) {
 
   let response = await fetch(ApiUrl)
   let cityWeather = await response.json();
+ 
+  return cityWeather;
 }
