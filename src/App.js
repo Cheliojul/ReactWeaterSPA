@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { CitiesList } from './components/CitiesList/CitiesList';
+import { getWeather } from './api/api'
 
 export const App = () => {
   const [cities, setCities] = useLocalStorage("cities", []);
@@ -8,15 +9,21 @@ export const App = () => {
   const AddCity = (event) => {
     event.preventDefault();
 
-    setCities([...cities, input]);
+    getWeather(input)
+      .catch(error => setInput(''))
+    if (input.length < 2) {
+      alert('Please enter valid city name')
+    } else {
+      if (!cities.includes(input)) {
+        setCities([...cities, input]);
+      } else {
+        alert('City already added')
+      }
+    }
     setInput('');
   }
-  // const getData = async(city) => {
-  //   const response = await getWeather(city);
-  
-  //   console.log(response) ;
-  // };
 
+  console.log('STATE _ CITIES - ', cities)
   function changeValue(event) {
     const { value } = event.target;
     setInput(value);
@@ -24,17 +31,31 @@ export const App = () => {
 
   return (
     <div className="App">
-      <form onSubmit={AddCity} className="form-row">
+      <form
+        onSubmit={AddCity}
+        className="d-flex justify-content-center"
+      >
         <input
           type="text"
           value={input}
-          placeholder="Input Cities"
+          placeholder="Input City"
           onChange={changeValue}
-          className='d-block align-self-center'
+          className='col-2'
         >
         </input>
-        <button type="submit"> Add City</button>
-        <button onClick={() => setCities([])}> Clear Cities</button>
+        <button
+          type="submit"
+          className='col-1 btn btn-secondary'
+        >
+          Add
+        </button>
+        <button
+          type="button"
+          onClick={() => setCities([])}
+          className='col-1 btn btn-secondary'
+        >
+          Clear
+        </button>
       </form>
       <CitiesList cities={cities} />
     </div>
@@ -46,7 +67,7 @@ function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
     try {
       const item = window.localStorage.getItem(key);
-
+      
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
       console.log(error);
