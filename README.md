@@ -5,12 +5,12 @@
   Create Weather SPA which show weather in selected cities
 
   * With List of Cities
-  **  Weather info
-  **  Onclick show additional info
-  **  Each card should have buttons for delete\refresh city data
-  ** Should be a possability to delete and add cities
+  *  Weather info
+  *  Onclick show additional info
+  *  Each card should have buttons for delete\refresh city data
+  * Should be a possability to delete and add cities
   * Use LocalStorage for List of selected Cities
-  ** Will be a plus : In additinal city info create page with temperature per 4 hour diagram on current day
+  * Will be a plus : In additinal city info create page with temperature per 4 hour diagram on current day
 
 ## Requirments
 
