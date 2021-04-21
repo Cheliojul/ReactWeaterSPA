@@ -6,10 +6,8 @@ export const CityCard = ({ city, onDelete }) => {
   const [data, setData] = useState({});
 
   const handleClick = () => {
-    console.log('CHANGED')
     getWeather(city).then(result => setData(result));
   }
-  console.log(data)
 
   useEffect(() => {
     getWeather(city).then(result => setData(result))
