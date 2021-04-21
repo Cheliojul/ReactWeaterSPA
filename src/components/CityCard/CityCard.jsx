@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { getWeather } from '../../api/api'
 import './CityCard.css'
 
-export const CityCard = ({ city }) => {
+export const CityCard = ({ city, onDelete }) => {
   const [data, setData] = useState({});
 
-  // const handleClick = () => {
-  //   getWeather(city).then(result => setData(result));
-  // }
+  const handleClick = () => {
+    console.log('CHANGED')
+    getWeather(city).then(result => setData(result));
+  }
   console.log(data)
 
   useEffect(() => {
@@ -30,20 +31,23 @@ export const CityCard = ({ city }) => {
             {`${Math.round(data.main.temp - 273.15)} °C`}
           </span>
           <div className="CityCard__wind">
-            {`wind ${data.wind.speed} m/s`}
+            {`Wind: ${data.wind.speed} m/s`}
           </div>
           <div className="CityCard__clouds">
-            {`clouds ${data.clouds.all} %`}
+            {`Clouds: ${data.clouds.all} %`}
           </div>
           <div className="CityCard__hpa">
-            {`${data.main.pressure} hpa`}
+            {`Pressure:${data.main.pressure * 0.75} mm`}
           </div>
         </div>
         <div className='container CityCard__button-container'>
-          <button className="CityCard__button-delete btn btn-sm h-100 w-50 p-1 align-bottom ">
+          <button
+            className="CityCard__button-delete btn btn-sm h-100 w-50 p-1 align-bottom "
+            onClick={() => onDelete(city)}
+          >
           </button>
           <button
-            // onClick={() => handleClick}
+            onClick={() => handleClick()}
             className="CityCard__button-refresh btn btn-sm h-100 w-50 p-1">
           </button>
         </div>

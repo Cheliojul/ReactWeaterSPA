@@ -1,11 +1,15 @@
 .CityCard {
-  /* display: flex;
-  flex-direction: column; */
   height: 200px;
-  width: 160px;
+  width: 180px;
   margin: 5px 15px;
   background-color: white;
   border-radius: 5px;
+  animation: showCard 1s linear forwards;
+  transition: 1s background-color, 1s animation, 1s visibility;
+}
+
+.CityCard:hover {
+  background-color: #c5b2b2;
 }
 
 .CityCard__title {
@@ -41,4 +45,13 @@
 
 .CityCard__hpa {
   margin-bottom: 15px;
+}
+
+@keyframes showCard {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
 }

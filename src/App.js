@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './App.css';
 import { CitiesList } from './components/CitiesList/CitiesList';
 import { getWeather } from './api/api'
 
 export const App = () => {
+  
   const [cities, setCities] = useLocalStorage("cities", []);
   const [input, setInput] = useState('');
+
+  const onDelete = (cityName) => {
+    let filteredCities = cities
+      .filter(city => city !== cityName)
+    setCities(filteredCities);
+    };
+
   const AddCity = (event) => {
     event.preventDefault();
 
@@ -57,7 +65,7 @@ export const App = () => {
           Clear
         </button>
       </form>
-      <CitiesList cities={cities} />
+      <CitiesList cities={cities} onDelete={onDelete} />
     </div>
   );
 }
