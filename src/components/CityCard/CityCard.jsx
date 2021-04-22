@@ -42,7 +42,7 @@ export const CityCard = ({ city, onDelete }) => {
           <div>
             {`${data.sys.country}`}
             <img
-              src={`https://www.countryflags.io/${data.sys.country}/flat/16.png`}
+              src={`https://www.countryflags.io/${data.sys.country}/flat/32.png`}
               alt=""
             />
           </div>

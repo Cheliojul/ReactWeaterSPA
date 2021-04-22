@@ -10,7 +10,7 @@ const Modal = ({ data, active, setModalActive }) => (
     onKeyDown={handleKeyDown}
     tabIndex="0"
   >
-    <div className="modal__content">
+    <div className={active ? 'modal__content active' : 'modal__content'}>
       <div className="modal__content__title">
         {`${data.name} , ${data.sys.country} `}
         <img
