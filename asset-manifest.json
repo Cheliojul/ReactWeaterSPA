@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ReactWeaterSPA/static/css/main.a9415610.chunk.css",
-    "main.js": "/ReactWeaterSPA/static/js/main.9381fe98.chunk.js",
-    "main.js.map": "/ReactWeaterSPA/static/js/main.9381fe98.chunk.js.map",
+    "main.css": "/ReactWeaterSPA/static/css/main.1c7b7929.chunk.css",
+    "main.js": "/ReactWeaterSPA/static/js/main.e9d3c8f3.chunk.js",
+    "main.js.map": "/ReactWeaterSPA/static/js/main.e9d3c8f3.chunk.js.map",
     "runtime-main.js": "/ReactWeaterSPA/static/js/runtime-main.37c321f6.js",
     "runtime-main.js.map": "/ReactWeaterSPA/static/js/runtime-main.37c321f6.js.map",
     "static/js/2.896dda3f.chunk.js": "/ReactWeaterSPA/static/js/2.896dda3f.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.8acd08cb.chunk.js": "/ReactWeaterSPA/static/js/3.8acd08cb.chunk.js",
     "static/js/3.8acd08cb.chunk.js.map": "/ReactWeaterSPA/static/js/3.8acd08cb.chunk.js.map",
     "index.html": "/ReactWeaterSPA/index.html",
-    "static/css/main.a9415610.chunk.css.map": "/ReactWeaterSPA/static/css/main.a9415610.chunk.css.map",
+    "static/css/main.1c7b7929.chunk.css.map": "/ReactWeaterSPA/static/css/main.1c7b7929.chunk.css.map",
     "static/js/2.896dda3f.chunk.js.LICENSE.txt": "/ReactWeaterSPA/static/js/2.896dda3f.chunk.js.LICENSE.txt",
     "static/media/CityCard.css": "/ReactWeaterSPA/static/media/refresh.a1562e19.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.37c321f6.js",
     "static/js/2.896dda3f.chunk.js",
-    "static/css/main.a9415610.chunk.css",
-    "static/js/main.9381fe98.chunk.js"
+    "static/css/main.1c7b7929.chunk.css",
+    "static/js/main.e9d3c8f3.chunk.js"
   ]
 }
