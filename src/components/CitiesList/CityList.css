@@ -1,7 +1,9 @@
-.CityList {
+.city-list {
   padding: 20px 30px;
 }
 
-/* .CityList__card {
-
-} */
+@media screen and (max-width: 375px) {
+  .city-list {
+    justify-content: center;
+  }
+}

@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import { BrowserRouter as Router,
+   Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import { CitiesList } from './components/CitiesList/CitiesList';
-import { getWeather } from './api/api'
 
 export const App = () => {
   
   const [cities, setCities] = useLocalStorage("cities", []);
   const [input, setInput] = useState('');
 
-  const onDelete = (cityName) => {
+  const onDelete = useCallback((cityName) => {
     let filteredCities = cities
       .filter(city => city !== cityName)
     setCities(filteredCities);
-    };
+    });
 
   const AddCity = (event) => {
     event.preventDefault();
 
-    getWeather(input)
-      .catch(error => setInput(''))
     if (input.length < 2) {
       alert('Please enter valid city name')
     } else {
@@ -41,31 +40,32 @@ export const App = () => {
     <div className="App">
       <form
         onSubmit={AddCity}
-        className="d-flex justify-content-center"
+        className="form d-flex justify-content-center"
       >
         <input
           type="text"
           value={input}
           placeholder="Input City"
           onChange={changeValue}
-          className='col-2'
+          className='form__input col-4'
         >
         </input>
         <button
           type="submit"
-          className='col-1 btn btn-secondary'
+          className='form__button col-2 btn btn-secondary'
         >
           Add
         </button>
         <button
           type="button"
           onClick={() => setCities([])}
-          className='col-1 btn btn-secondary'
+          className='form__button col-2 btn btn-secondary'
         >
           Clear
         </button>
       </form>
       <CitiesList cities={cities} onDelete={onDelete} />
+      {console.log('APP STATE', cities)}
     </div>
   );
 }

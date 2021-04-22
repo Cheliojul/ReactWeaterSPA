@@ -1,3 +1,28 @@
 body {
-  background-color: #3b83bd;
+  background-color: #556b2f;
+}
+
+.form {
+  padding: 10px;
+}
+
+.form__input {
+  border-radius: 10px;
+  background-color: #d9c88b;
+}
+
+.form__input:focus {
+  outline: black;
+}
+
+.form__button {
+  margin-left: 20px;
+  background-color: #d9c88b;
+
+}
+
+.form__button:hover {
+
+  background-color: white;
+  color: black;
 }
