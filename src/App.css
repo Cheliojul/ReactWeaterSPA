@@ -18,11 +18,10 @@ body {
 .form__button {
   margin-left: 20px;
   background-color: #d9c88b;
-
 }
 
 .form__button:hover {
-
   background-color: white;
   color: black;
+  box-shadow: 5px 2px #4e4d4d;
 }

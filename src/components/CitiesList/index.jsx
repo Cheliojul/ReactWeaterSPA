@@ -1,1 +1,0 @@
-import CitiesList from './CitiesList';
