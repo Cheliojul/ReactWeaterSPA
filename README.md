@@ -12,9 +12,8 @@
   *  Each card should have buttons for delete\refresh city data
   * Should be a possability to delete and add cities
   * Use LocalStorage for List of selected Cities
-  * Will be a plus : In additinal city info create page with temperature per 4 hour diagram on current day
 
-## Requirments
+## Requirements
 
   * Use React, Redux, React-router
   * Weather API http://openweathermap.org/
